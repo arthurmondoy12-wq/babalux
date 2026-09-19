@@ -1,41 +1,27 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BABALUX — Professional Grooming & Beauty</title>
-  <meta
-    name="description"
-    content="Babalux — professional grooming, hair care and beauty essentials for modern salons, barbers and individuals."
-  />
+  <title>Babalux | Professional Grooming & Beauty</title>
+  <meta name="description" content="Babalux — premium grooming and beauty products designed for modern professionals.">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================================
-       BABALUX — SINGLE FILE WEBSITE
-       HTML + CSS + JavaScript
-       ========================================================= */
-
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
     :root {
       --black: #080808;
-      --black-2: #101010;
-      --charcoal: #171717;
-      --cream: #f3efe7;
-      --cream-2: #e9e3d8;
-      --white: #ffffff;
-      --muted: #a6a29a;
-      --line: rgba(255,255,255,.11);
-      --gold: #c9a96e;
-      --gold-light: #e0c58f;
-
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
-
-      --container: 1240px;
-      --radius: 24px;
+      --dark: #101010;
+      --dark-2: #171717;
+      --ivory: #f4f0e8;
+      --muted: #aaa49a;
+      --gold: #c9a86a;
+      --gold-light: #e1c98f;
+      --border: rgba(255,255,255,.09);
     }
 
     * {
@@ -50,9 +36,9 @@
 
     body {
       background: var(--black);
-      color: var(--white);
-      font-family: var(--sans);
-      overflow-x: hidden;
+      color: var(--ivory);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
     }
 
     a {
@@ -61,53 +47,40 @@
     }
 
     img {
-      display: block;
       max-width: 100%;
-    }
-
-    button {
-      font: inherit;
+      display: block;
     }
 
     .container {
-      width: min(calc(100% - 48px), var(--container));
-      margin-inline: auto;
+      width: min(1180px, 92%);
+      margin: auto;
     }
 
-    /* =========================================================
-       HEADER
-       ========================================================= */
+    /* NAVIGATION */
 
     header {
       position: fixed;
-      inset: 0 0 auto;
+      top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
-      padding: 18px 0;
-      transition: .35s ease;
+      background: rgba(8,8,8,.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
 
-    header.scrolled {
-      background: rgba(8,8,8,.88);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      height: 66px;
+    nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 22px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(8,8,8,.42);
-      backdrop-filter: blur(16px);
-      border-radius: 999px;
+      gap: 30px;
     }
 
     .logo {
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: .18em;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      letter-spacing: 3px;
     }
 
     .logo span {
@@ -116,312 +89,139 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 32px;
-      font-size: 13px;
-      color: #d9d6d0;
+      list-style: none;
+      font-size: 14px;
     }
 
     .nav-links a {
-      position: relative;
-      transition: color .25s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width .25s ease;
+      color: #d7d2c8;
+      transition: .25s;
     }
 
     .nav-links a:hover {
-      color: white;
+      color: var(--gold-light);
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .icon-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: white;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      transition: .25s ease;
-    }
-
-    .icon-btn:hover {
-      background: white;
-      color: black;
-    }
-
-    .menu-btn {
-      display: none;
-    }
-
-    /* =========================================================
-       BUTTONS
-       ========================================================= */
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 999px;
+    .nav-button {
+      border: 1px solid var(--gold);
+      padding: 10px 18px;
       font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition:
-        transform .25s ease,
-        background .25s ease,
-        color .25s ease,
-        border .25s ease;
+      letter-spacing: .5px;
+      transition: .25s;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: var(--cream);
-      color: #0a0a0a;
-    }
-
-    .btn-primary:hover {
-      background: white;
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.24);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      border-color: white;
-      background: white;
-      color: black;
-    }
-
-    .btn-gold {
+    .nav-button:hover {
       background: var(--gold);
       color: #080808;
     }
 
-    /* =========================================================
-       HERO
-       ========================================================= */
+    /* HERO */
 
     .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 72% 25%, rgba(201,169,110,.16), transparent 28%),
-        radial-gradient(circle at 15% 80%, rgba(255,255,255,.06), transparent 24%),
-        #080808;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(8,8,8,.96) 0%, rgba(8,8,8,.66) 44%, rgba(8,8,8,.18) 100%),
-        linear-gradient(0deg, rgba(8,8,8,.8), transparent 50%);
-      z-index: 1;
-    }
-
-    .hero-glow {
-      position: absolute;
-      width: 580px;
-      height: 580px;
-      right: 7%;
-      top: 18%;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(201,169,110,.18),
-        rgba(201,169,110,.03) 48%,
-        transparent 70%
-      );
-      filter: blur(10px);
-    }
-
-    .hero-art {
-      position: absolute;
-      right: 5%;
-      top: 14%;
-      width: min(52vw, 700px);
-      height: 75vh;
-      z-index: 0;
+      min-height: 92vh;
+      padding-top: 78px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 35%, rgba(201,168,106,.12), transparent 30%),
+        linear-gradient(135deg, #090909, #121212);
     }
 
-    .hero-art::before {
+    .hero::after {
       content: "";
-      width: 72%;
-      aspect-ratio: 1;
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(201,168,106,.12);
       border-radius: 50%;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,.1), rgba(201,169,110,.12)),
-        radial-gradient(circle at 35% 30%, #494949, #111 65%);
-      box-shadow:
-        0 0 120px rgba(201,169,110,.11),
-        inset 0 0 80px rgba(255,255,255,.05);
-      transform: rotate(-12deg);
-    }
-
-    .hero-product {
-      position: absolute;
-      width: 210px;
-      height: 440px;
-      border-radius: 28px;
-      background:
-        linear-gradient(100deg, #151515, #3c3c3c 45%, #111 72%);
-      box-shadow:
-        30px 40px 70px rgba(0,0,0,.7),
-        inset 2px 0 2px rgba(255,255,255,.12);
-      transform: rotate(14deg);
-    }
-
-    .hero-product::before {
-      content: "BABALUX";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%) rotate(-90deg);
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: .3em;
-      color: rgba(255,255,255,.82);
-    }
-
-    .hero-product::after {
-      content: "PROFESSIONAL";
-      position: absolute;
-      left: 50%;
-      bottom: 60px;
-      transform: translateX(-50%);
-      color: var(--gold-light);
-      font-size: 8px;
-      letter-spacing: .35em;
-      white-space: nowrap;
+      right: -180px;
+      top: 15%;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      width: 100%;
-      padding: 160px 0 70px;
+      max-width: 720px;
     }
 
     .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       color: var(--gold-light);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .22em;
       text-transform: uppercase;
-      margin-bottom: 26px;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 20px;
     }
 
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      max-width: 760px;
-      font-family: var(--serif);
-      font-size: clamp(64px, 8.2vw, 128px);
-      line-height: .88;
+    h1 {
+      font-family: "Playfair Display", serif;
       font-weight: 500;
-      letter-spacing: -.055em;
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: 1.02;
+      margin-bottom: 25px;
     }
 
-    .hero h1 em {
-      color: var(--gold-light);
-      font-weight: 400;
+    h1 span {
+      color: var(--gold);
     }
 
-    .hero-copy {
-      max-width: 520px;
-      margin-top: 30px;
-      color: #b8b5af;
-      font-size: 16px;
-      line-height: 1.8;
+    .hero-text {
+      max-width: 580px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 35px;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-    }
-
-    .hero-bottom {
-      display: flex;
+    .button {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      margin-top: 72px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      color: #77736d;
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+      justify-content: center;
+      padding: 14px 25px;
+      background: var(--gold);
+      color: #090909;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .5px;
+      transition: .25s;
     }
 
-    /* =========================================================
-       STATS
-       ========================================================= */
+    .button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      margin-left: 10px;
+      background: transparent;
+      color: var(--ivory);
+      border: 1px solid var(--border);
+    }
+
+    .button-outline:hover {
+      border-color: var(--gold);
+      background: transparent;
+      color: var(--gold-light);
+    }
+
+    /* STATS */
 
     .stats {
-      background: var(--cream);
-      color: #111;
-      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--dark);
     }
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .stat {
-      padding: 15px 28px;
-      border-right: 1px solid rgba(0,0,0,.12);
-    }
-
-    .stat:first-child {
-      padding-left: 0;
+      padding: 28px;
+      text-align: center;
+      border-right: 1px solid var(--border);
     }
 
     .stat:last-child {
@@ -430,59 +230,45 @@
 
     .stat strong {
       display: block;
-      font-family: var(--serif);
-      font-size: 34px;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
       font-weight: 500;
     }
 
     .stat span {
-      display: block;
-      margin-top: 3px;
-      color: #69645d;
-      font-size: 11px;
+      color: var(--muted);
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: .1em;
+      letter-spacing: 1.5px;
     }
 
-    /* =========================================================
-       GENERAL SECTIONS
-       ========================================================= */
+    /* SECTIONS */
 
     section {
-      padding: 120px 0;
+      padding: 100px 0;
     }
 
     .section-heading {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: end;
       gap: 30px;
-      margin-bottom: 52px;
+      margin-bottom: 45px;
     }
 
     .section-heading h2 {
-      max-width: 680px;
-      font-family: var(--serif);
+      font-family: "Playfair Display", serif;
+      font-size: 46px;
       font-weight: 500;
-      font-size: clamp(42px, 5vw, 72px);
-      line-height: .98;
-      letter-spacing: -.04em;
-    }
-
-    .section-heading h2 em {
-      color: var(--gold-light);
     }
 
     .section-heading p {
-      max-width: 400px;
+      max-width: 480px;
       color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
     }
 
-    /* =========================================================
-       COLLECTIONS
-       ========================================================= */
+    /* COLLECTIONS */
 
     .collections {
       background: #0c0c0c;
@@ -490,642 +276,324 @@
 
     .collection-grid {
       display: grid;
-      grid-template-columns: 1.35fr .85fr;
-      gap: 18px;
-    }
-
-    .collection-card {
-      position: relative;
-      min-height: 590px;
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: #151515;
-      border: 1px solid var(--line);
-    }
-
-    .collection-card.small {
-      min-height: 286px;
-    }
-
-    .collection-column {
-      display: grid;
-      gap: 18px;
-    }
-
-    .collection-bg {
-      position: absolute;
-      inset: 0;
-      transition: transform .7s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .collection-card:hover .collection-bg {
-      transform: scale(1.06);
-    }
-
-    .hair-bg {
-      background:
-        linear-gradient(0deg, rgba(0,0,0,.86), transparent 60%),
-        radial-gradient(circle at 65% 35%, #7d684e, #211b15 45%, #0d0d0d 78%);
-    }
-
-    .clipper-bg {
-      background:
-        linear-gradient(0deg, rgba(0,0,0,.9), transparent 60%),
-        radial-gradient(circle at 55% 40%, #454545, #171717 50%, #0a0a0a 80%);
-    }
-
-    .beauty-bg {
-      background:
-        linear-gradient(0deg, rgba(0,0,0,.88), transparent 60%),
-        radial-gradient(circle at 50% 35%, #624d48, #211819 52%, #0c0c0c 80%);
-    }
-
-    .collection-info {
-      position: absolute;
-      inset: auto 30px 30px;
-      z-index: 2;
-    }
-
-    .collection-info small {
-      color: var(--gold-light);
-      font-size: 10px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .collection-info h3 {
-      margin-top: 7px;
-      font-family: var(--serif);
-      font-size: 40px;
-      font-weight: 500;
-    }
-
-    .collection-card.small h3 {
-      font-size: 31px;
-    }
-
-    .collection-info a {
-      display: inline-flex;
-      margin-top: 18px;
-      align-items: center;
-      gap: 9px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-    }
-
-    /* =========================================================
-       PRODUCTS
-       ========================================================= */
-
-    .products {
-      background: var(--cream);
-      color: #111;
-    }
-
-    .products .section-heading p {
-      color: #68635c;
-    }
-
-    .products .eyebrow {
-      color: #806638;
-    }
-
-    .products-grid {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .product {
+    .collection {
+      min-height: 330px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
       position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.8), transparent),
+        radial-gradient(circle at 50% 35%, rgba(201,168,106,.18), transparent 40%),
+        #171717;
+      border: 1px solid var(--border);
+    }
+
+    .collection::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(201,168,106,.18);
+      border-radius: 50%;
+      top: 35px;
+      right: -50px;
+    }
+
+    .collection h3 {
+      position: relative;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .collection p {
+      position: relative;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* PRODUCTS */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      transition: .3s;
+      overflow: hidden;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,168,106,.4);
     }
 
     .product-image {
-      position: relative;
-      aspect-ratio: 1 / 1.1;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #ddd7cc;
-      display: grid;
-      place-items: center;
-    }
-
-    .product-image::after {
-      content: "BABALUX";
-      position: absolute;
-      font-weight: 700;
-      letter-spacing: .2em;
-      font-size: 12px;
-      opacity: .22;
-    }
-
-    .product-shape {
-      width: 38%;
-      height: 65%;
-      border-radius: 18px;
-      background: linear-gradient(100deg,#151515,#4b4b4b,#101010);
-      box-shadow: 25px 30px 40px rgba(0,0,0,.2);
-      transform: rotate(7deg);
-      z-index: 2;
-    }
-
-    .product:nth-child(2) .product-shape {
-      width: 48%;
-      height: 50%;
-      border-radius: 12px;
-      transform: rotate(-7deg);
-    }
-
-    .product:nth-child(3) .product-shape {
-      width: 32%;
-      height: 68%;
-      border-radius: 28px;
-      transform: rotate(4deg);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle, rgba(201,168,106,.13), transparent 55%),
+        #161616;
+      color: rgba(201,168,106,.5);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      letter-spacing: 2px;
     }
 
     .product-info {
+      padding: 20px;
+    }
+
+    .product-category {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 10px;
+      margin-bottom: 7px;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .product-description {
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 38px;
+    }
+
+    .product-bottom {
+      margin-top: 17px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 17px 3px;
-    }
-
-    .product-info h3 {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .product-info p {
-      color: #77716a;
-      font-size: 11px;
-      margin-top: 4px;
+      gap: 10px;
     }
 
     .price {
       font-weight: 700;
-      font-size: 14px;
-      white-space: nowrap;
+      color: var(--ivory);
     }
 
-    .product-link {
-      position: absolute;
-      right: 15px;
-      top: 15px;
-      z-index: 5;
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(255,255,255,.9);
-      color: black;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: .25s ease;
+    .buy-button {
+      background: var(--gold);
+      color: #080808;
+      padding: 9px 13px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+      transition: .2s;
     }
 
-    .product:hover .product-link {
-      opacity: 1;
-      transform: translateY(0);
+    .buy-button:hover {
+      background: var(--gold-light);
     }
 
-    /* =========================================================
-       BRAND STORY
-       ========================================================= */
+    /* STORY */
 
     .story {
-      background: #0b0b0b;
+      background: var(--dark);
     }
 
     .story-grid {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 80px;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
       align-items: center;
     }
 
     .story-visual {
-      min-height: 650px;
-      position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
+      min-height: 470px;
+      border: 1px solid var(--border);
       background:
-        radial-gradient(circle at 55% 38%, rgba(201,169,110,.35), transparent 24%),
-        linear-gradient(145deg,#302a21,#111);
+        radial-gradient(circle at 50% 40%, rgba(201,168,106,.16), transparent 35%),
+        #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
     .story-visual::before {
-      content: "";
-      position: absolute;
-      width: 55%;
-      aspect-ratio: 1;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 50%;
-      left: 23%;
-      top: 22%;
-    }
-
-    .story-visual::after {
-      content: "B";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
-      font-family: var(--serif);
-      font-size: 230px;
-      color: rgba(255,255,255,.08);
-    }
-
-    .story-copy .eyebrow {
-      margin-bottom: 24px;
+      content: "BABALUX";
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      letter-spacing: 8px;
+      color: rgba(201,168,106,.35);
     }
 
     .story-copy h2 {
-      font-family: var(--serif);
-      font-size: clamp(44px,5vw,70px);
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
       font-weight: 500;
-      line-height: 1;
-      letter-spacing: -.04em;
-    }
-
-    .story-copy h2 em {
-      color: var(--gold-light);
+      margin-bottom: 22px;
     }
 
     .story-copy p {
-      margin-top: 28px;
-      max-width: 550px;
       color: var(--muted);
-      line-height: 1.9;
-      font-size: 15px;
+      margin-bottom: 17px;
     }
 
-    .story-list {
-      margin-top: 35px;
-      display: grid;
-      gap: 15px;
-    }
-
-    .story-list div {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: #d6d1c8;
-      font-size: 13px;
-    }
-
-    .check {
-      width: 26px;
-      height: 26px;
-      border: 1px solid rgba(201,169,110,.5);
-      color: var(--gold-light);
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      font-size: 11px;
-    }
-
-    /* =========================================================
-       CTA
-       ========================================================= */
+    /* CTA */
 
     .cta {
-      padding: 0;
-      background: var(--cream);
-      color: #111;
-    }
-
-    .cta-inner {
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(201,168,106,.12), transparent 45%),
+        #0a0a0a;
     }
 
     .cta h2 {
-      max-width: 720px;
-      font-family: var(--serif);
-      font-size: clamp(48px, 6vw, 90px);
-      line-height: .92;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 6vw, 65px);
       font-weight: 500;
-      letter-spacing: -.05em;
+      margin-bottom: 15px;
     }
 
-    .cta h2 em {
-      color: #927747;
+    .cta p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 30px;
     }
 
-    .cta-copy {
-      max-width: 320px;
-    }
-
-    .cta-copy p {
-      color: #706b64;
-      line-height: 1.7;
-      margin-bottom: 25px;
-      font-size: 14px;
-    }
-
-    .cta .btn {
-      background: #111;
-      color: white;
-    }
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
+    /* FOOTER */
 
     footer {
+      padding: 55px 0 30px;
+      border-top: 1px solid var(--border);
       background: #070707;
-      padding: 75px 0 30px;
-      border-top: 1px solid var(--line);
     }
 
-    .footer-top {
+    .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr repeat(3, 1fr);
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 50px;
-      padding-bottom: 70px;
-    }
-
-    .footer-brand .logo {
-      font-size: 25px;
+      margin-bottom: 45px;
     }
 
     .footer-brand p {
-      color: #77736d;
-      max-width: 300px;
-      margin-top: 20px;
-      line-height: 1.7;
+      color: var(--muted);
+      max-width: 350px;
+      margin-top: 15px;
       font-size: 13px;
     }
 
-    .footer-column h4 {
-      font-size: 11px;
-      letter-spacing: .15em;
+    footer h4 {
+      color: var(--gold-light);
+      font-size: 12px;
       text-transform: uppercase;
-      color: #e6e2db;
-      margin-bottom: 20px;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
     }
 
-    .footer-column a {
-      display: block;
-      color: #77736d;
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+      color: var(--muted);
       font-size: 13px;
-      margin: 12px 0;
-      transition: color .2s ease;
     }
 
-    .footer-column a:hover {
-      color: white;
+    footer li a:hover {
+      color: var(--gold-light);
     }
 
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
+    .copyright {
       padding-top: 25px;
-      border-top: 1px solid var(--line);
-      color: #5e5b57;
-      font-size: 10px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      color: #777;
+      font-size: 11px;
+      text-align: center;
     }
 
-    /* =========================================================
-       REVEAL ANIMATION
-       ========================================================= */
+    /* MOBILE */
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================================================
-       MOBILE MENU
-       ========================================================= */
-
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-      background: #090909;
-      z-index: 900;
-      padding: 120px 24px 40px;
-      transform: translateY(-100%);
-      transition: transform .45s cubic-bezier(.77,0,.18,1);
-    }
-
-    .mobile-menu.open {
-      transform: translateY(0);
-    }
-
-    .mobile-menu nav {
-      display: grid;
-      gap: 20px;
-    }
-
-    .mobile-menu nav a {
-      font-family: var(--serif);
-      font-size: 42px;
-      color: white;
-    }
-
-    .mobile-menu .btn {
-      margin-top: 35px;
-    }
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 980px) {
+    @media (max-width: 900px) {
       .nav-links {
         display: none;
       }
 
-      .menu-btn {
-        display: grid;
-      }
-
-      .hero-art {
-        right: -18%;
-        width: 70vw;
-        opacity: .65;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .stat:nth-child(2) {
-        border-right: 0;
-      }
-
-      .stat:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(0,0,0,.12);
-      }
-
-      .stat:nth-child(3) {
-        padding-left: 0;
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .collection-grid {
         grid-template-columns: 1fr;
       }
 
-      .collection-column {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .story-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
       }
 
       .story-visual {
-        min-height: 500px;
+        min-height: 350px;
       }
 
-      .footer-top {
+      .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 680px) {
-      .container {
-        width: min(calc(100% - 32px), var(--container));
-      }
-
-      header {
-        padding: 10px 0;
-      }
-
-      .nav {
-        height: 58px;
-        padding: 0 14px;
-      }
-
-      .logo {
-        font-size: 18px;
-      }
-
-      .nav-actions .icon-btn:first-child {
-        display: none;
+    @media (max-width: 600px) {
+      section {
+        padding: 70px 0;
       }
 
       .hero {
-        min-height: 850px;
+        min-height: 82vh;
       }
 
-      .hero-art {
-        right: -45%;
-        top: 24%;
-        width: 105vw;
-        opacity: .4;
+      .button-outline {
+        margin-left: 0;
+        margin-top: 10px;
       }
 
-      .hero-product {
-        width: 150px;
-        height: 330px;
+      .stats-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero-content {
-        padding: 150px 0 45px;
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
       }
 
-      .hero h1 {
-        font-size: clamp(55px, 17vw, 86px);
+      .stat:last-child {
+        border-bottom: 0;
       }
 
-      .hero-copy {
-        font-size: 14px;
-        line-height: 1.7;
-      }
-
-      .hero-bottom {
-        margin-top: 48px;
-        font-size: 9px;
-      }
-
-      section {
-        padding: 80px 0;
+      .product-grid {
+        grid-template-columns: 1fr;
       }
 
       .section-heading {
         display: block;
-        margin-bottom: 35px;
       }
 
-      .section-heading p {
-        margin-top: 20px;
+      .section-heading h2 {
+        font-size: 38px;
+        margin-bottom: 12px;
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .stat {
-        padding: 15px 10px;
-      }
-
-      .stat strong {
-        font-size: 27px;
-      }
-
-      .stat span {
-        font-size: 9px;
-      }
-
-      .collection-card {
-        min-height: 440px;
-      }
-
-      .collection-column {
-        grid-template-columns: 1fr;
-      }
-
-      .collection-card.small {
-        min-height: 300px;
-      }
-
-      .products-grid {
+      .footer-grid {
         grid-template-columns: 1fr;
         gap: 30px;
-      }
-
-      .story-visual {
-        min-height: 390px;
-      }
-
-      .cta-inner {
-        min-height: 600px;
-        display: block;
-        padding: 80px 0;
-      }
-
-      .cta-copy {
-        margin-top: 35px;
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 20px;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-
-      .footer-bottom {
-        display: block;
-        line-height: 2;
       }
     }
   </style>
@@ -1133,696 +601,352 @@
 
 <body>
 
-  <!-- =======================================================
-       HEADER
-       ======================================================= -->
-
-  <header id="header">
+  <header>
     <div class="container">
-      <div class="nav">
+      <nav>
+        <a href="#" class="logo">BABA<span>LUX</span></a>
 
-        <a href="#" class="logo">
-          BABA<span>LUX</span>
-        </a>
+        <ul class="nav-links">
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#story">About</a></li>
+        </ul>
 
-        <nav class="nav-links">
-          <a href="#collections">Collections</a>
-          <a href="#products">Featured</a>
-          <a href="#story">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="nav-actions">
-          <!-- MAIN SHOP BUTTON -->
-          <a
-            href="https://www.babaluxpro.com/shop"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener"
-          >
-            Shop Now
-          </a>
-
-          <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">
-            ☰
-          </button>
-        </div>
-
-      </div>
+        <a href="#products" class="nav-button">SHOP NOW</a>
+      </nav>
     </div>
   </header>
 
 
-  <!-- =======================================================
-       MOBILE MENU
-       ======================================================= -->
-
-  <div class="mobile-menu" id="mobileMenu">
-    <nav>
-      <a href="#collections" class="mobile-link">Collections</a>
-      <a href="#products" class="mobile-link">Featured</a>
-      <a href="#story" class="mobile-link">About</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-    </nav>
-
-    <a
-      href="https://www.babaluxpro.com/shop"
-      class="btn btn-primary"
-      target="_blank"
-      rel="noopener"
-    >
-      Shop Now →
-    </a>
-  </div>
-
-
-  <!-- =======================================================
-       HERO
-       ======================================================= -->
-
   <main>
 
     <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Professional Grooming & Beauty</div>
 
-      <div class="hero-glow"></div>
+          <h1>
+            Precision.<br>
+            <span>Luxury.</span><br>
+            Confidence.
+          </h1>
 
-      <div class="hero-art">
-        <div class="hero-product"></div>
-      </div>
+          <p class="hero-text">
+            Premium grooming essentials created for people who expect
+            precision, performance and a refined finish every time.
+          </p>
 
-      <div class="container hero-content">
-
-        <div class="eyebrow">
-          Professional grooming / Est. 2014
+          <a href="#products" class="button">EXPLORE PRODUCTS</a>
+          <a href="#story" class="button button-outline">OUR STORY</a>
         </div>
-
-        <h1>
-          Elevate your
-          <em>everyday.</em>
-        </h1>
-
-        <p class="hero-copy">
-          Professional grooming, hair care and personal-care essentials
-          selected for people who expect more from their routine.
-        </p>
-
-        <div class="hero-buttons">
-
-          <!-- PRIMARY SHOP NOW -->
-          <a
-            href="https://www.babaluxpro.com/shop"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener"
-          >
-            Shop Now
-            <span>↗</span>
-          </a>
-
-          <a href="#collections" class="btn btn-outline">
-            Explore Collection
-          </a>
-
-        </div>
-
-        <div class="hero-bottom">
-          <span>Hair Care</span>
-          <span>Professional Tools</span>
-          <span>Personal Care</span>
-          <span>Worldwide Selection</span>
-        </div>
-
       </div>
     </section>
 
 
-    <!-- =====================================================
-         STATS
-         ===================================================== -->
-
     <section class="stats">
       <div class="container">
-
         <div class="stats-grid">
 
           <div class="stat">
-            <strong>500+</strong>
-            <span>Products</span>
-          </div>
-
-          <div class="stat">
-            <strong>10+</strong>
-            <span>Years Experience</span>
+            <strong>PRO</strong>
+            <span>Professional Quality</span>
           </div>
 
           <div class="stat">
             <strong>01</strong>
-            <span>Professional Standard</span>
+            <span>Independent Brand</span>
           </div>
 
           <div class="stat">
-            <strong>∞</strong>
-            <span>Ways To Elevate</span>
+            <strong>24/7</strong>
+            <span>Online Shopping</span>
           </div>
 
         </div>
-
       </div>
     </section>
 
 
-    <!-- =====================================================
-         COLLECTIONS
-         ===================================================== -->
-
-    <section class="collections" id="collections">
-
+    <section id="collections" class="collections">
       <div class="container">
 
-        <div class="section-heading reveal">
-
+        <div class="section-heading">
           <div>
-            <div class="eyebrow">Explore Babalux</div>
-
-            <h2>
-              Everything your
-              <em>craft</em> needs.
-            </h2>
+            <div class="eyebrow">Shop by category</div>
+            <h2>Our Collections</h2>
           </div>
 
           <p>
-            From professional hair treatments to precision barber tools,
-            discover a carefully selected range for salons, barbers and
-            personal care.
+            A focused selection of professional grooming and beauty
+            essentials. More products will be added as the collection grows.
           </p>
-
         </div>
-
 
         <div class="collection-grid">
 
-          <a
-            href="https://www.babaluxpro.com/shop"
-            class="collection-card reveal"
-            target="_blank"
-            rel="noopener"
-          >
-
-            <div class="collection-bg hair-bg"></div>
-
-            <div class="collection-info">
-              <small>01 / Collection</small>
-              <h3>Hair Care</h3>
-              <span>Discover collection →</span>
-            </div>
-
+          <a href="#products" class="collection">
+            <h3>Hair Care</h3>
+            <p>Professional essentials for styling and maintenance.</p>
           </a>
 
+          <a href="#products" class="collection">
+            <h3>Clippers</h3>
+            <p>Precision tools built for a clean, controlled finish.</p>
+          </a>
 
-          <div class="collection-column">
-
-            <a
-              href="https://www.babaluxpro.com/shop"
-              class="collection-card small reveal"
-              target="_blank"
-              rel="noopener"
-            >
-
-              <div class="collection-bg clipper-bg"></div>
-
-              <div class="collection-info">
-                <small>02 / Collection</small>
-                <h3>Clippers & Tools</h3>
-                <span>Shop professional tools →</span>
-              </div>
-
-            </a>
-
-
-            <a
-              href="https://www.babaluxpro.com/shop"
-              class="collection-card small reveal"
-              target="_blank"
-              rel="noopener"
-            >
-
-              <div class="collection-bg beauty-bg"></div>
-
-              <div class="collection-info">
-                <small>03 / Collection</small>
-                <h3>Personal Care</h3>
-                <span>Explore products →</span>
-              </div>
-
-            </a>
-
-          </div>
+          <a href="#products" class="collection">
+            <h3>Grooming</h3>
+            <p>Everyday grooming products designed around performance.</p>
+          </a>
 
         </div>
-
       </div>
     </section>
 
 
-    <!-- =====================================================
-         FEATURED PRODUCTS
-         ===================================================== -->
-
-    <section class="products" id="products">
-
+    <section id="products">
       <div class="container">
 
-        <div class="section-heading reveal">
-
+        <div class="section-heading">
           <div>
-            <div class="eyebrow">Featured selection</div>
-
-            <h2>
-              Professional tools.
-              <em>Exceptional results.</em>
-            </h2>
+            <div class="eyebrow">Featured collection</div>
+            <h2>Featured Products</h2>
           </div>
 
           <p>
-            A selection inspired by some of the professional grooming
-            products available through the Babalux catalogue.
+            Product information and payment links will be connected to your
+            own catalogue and secure checkout.
           </p>
-
         </div>
 
 
-        <div class="products-grid">
+        <div class="product-grid">
 
           <!-- PRODUCT 1 -->
-
-          <article class="product reveal">
-
-            <a
-              href="https://www.babaluxpro.com/shop/babalux-keratin-mask-1000ml-41"
-              target="_blank"
-              rel="noopener"
-              class="product-link"
-              aria-label="View product"
-            >
-              ↗
-            </a>
-
-            <div class="product-image">
-              <div class="product-shape"></div>
-            </div>
+          <article class="product">
+            <div class="product-image">PRODUCT 01</div>
 
             <div class="product-info">
-              <div>
-                <h3>Babalux Keratin Mask</h3>
-                <p>Professional Hair Care</p>
+              <div class="product-category">Clippers</div>
+
+              <h3>Professional Clipper</h3>
+
+              <p class="product-description">
+                Premium professional grooming tool.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">£00.00</span>
+
+                <!-- Replace with your Stripe Payment Link -->
+                <a
+                  href="#"
+                  class="buy-button"
+                  onclick="return paymentPlaceholder(event)"
+                >
+                  BUY NOW
+                </a>
               </div>
-
-              <div class="price">21.69 €</div>
             </div>
-
           </article>
 
 
           <!-- PRODUCT 2 -->
-
-          <article class="product reveal">
-
-            <a
-              href="https://www.babaluxpro.com/shop"
-              target="_blank"
-              rel="noopener"
-              class="product-link"
-              aria-label="View product"
-            >
-              ↗
-            </a>
-
-            <div class="product-image">
-              <div class="product-shape"></div>
-            </div>
+          <article class="product">
+            <div class="product-image">PRODUCT 02</div>
 
             <div class="product-info">
-              <div>
-                <h3>Professional Clippers</h3>
-                <p>Barber Tools</p>
+              <div class="product-category">Hair Care</div>
+
+              <h3>Premium Hair Product</h3>
+
+              <p class="product-description">
+                Professional care for a refined finish.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">£00.00</span>
+
+                <a
+                  href="#"
+                  class="buy-button"
+                  onclick="return paymentPlaceholder(event)"
+                >
+                  BUY NOW
+                </a>
               </div>
-
-              <div class="price">Shop</div>
             </div>
-
           </article>
 
 
           <!-- PRODUCT 3 -->
-
-          <article class="product reveal">
-
-            <a
-              href="https://www.babaluxpro.com/shop"
-              target="_blank"
-              rel="noopener"
-              class="product-link"
-              aria-label="View product"
-            >
-              ↗
-            </a>
-
-            <div class="product-image">
-              <div class="product-shape"></div>
-            </div>
+          <article class="product">
+            <div class="product-image">PRODUCT 03</div>
 
             <div class="product-info">
-              <div>
-                <h3>Hair Treatment</h3>
-                <p>Babalux Professional</p>
+              <div class="product-category">Grooming</div>
+
+              <h3>Professional Grooming Kit</h3>
+
+              <p class="product-description">
+                Essential tools for everyday grooming.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">£00.00</span>
+
+                <a
+                  href="#"
+                  class="buy-button"
+                  onclick="return paymentPlaceholder(event)"
+                >
+                  BUY NOW
+                </a>
               </div>
-
-              <div class="price">Shop</div>
             </div>
+          </article>
 
+
+          <!-- PRODUCT 4 -->
+          <article class="product">
+            <div class="product-image">PRODUCT 04</div>
+
+            <div class="product-info">
+              <div class="product-category">Beauty</div>
+
+              <h3>Luxury Beauty Essential</h3>
+
+              <p class="product-description">
+                Designed for a polished professional routine.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">£00.00</span>
+
+                <a
+                  href="#"
+                  class="buy-button"
+                  onclick="return paymentPlaceholder(event)"
+                >
+                  BUY NOW
+                </a>
+              </div>
+            </div>
           </article>
 
         </div>
-
-
-        <div style="text-align:center; margin-top:55px;">
-
-          <a
-            href="https://www.babaluxpro.com/shop"
-            class="btn btn-gold"
-            target="_blank"
-            rel="noopener"
-          >
-            View All Products →
-          </a>
-
-        </div>
-
       </div>
     </section>
 
 
-    <!-- =====================================================
-         BRAND STORY
-         ===================================================== -->
-
-    <section class="story" id="story">
-
+    <section id="story" class="story">
       <div class="container">
 
         <div class="story-grid">
 
-          <div class="story-visual reveal"></div>
+          <div class="story-visual"></div>
 
+          <div class="story-copy">
+            <div class="eyebrow">The Babalux Standard</div>
 
-          <div class="story-copy reveal">
-
-            <div class="eyebrow">
-              The Babalux standard
-            </div>
-
-            <h2>
-              Elegance starts here,
-              <em>without limits.</em>
-            </h2>
+            <h2>Built around precision.</h2>
 
             <p>
-              Babalux brings together grooming and personal-care essentials
-              for modern professionals and individuals. Our catalogue
-              combines carefully selected products with a focus on quality,
-              practicality and professional results.
+              Babalux is being built as an independent grooming and beauty
+              brand focused on quality products, refined presentation and
+              straightforward online shopping.
             </p>
 
-            <div class="story-list">
+            <p>
+              Every product will have its own information, pricing and secure
+              payment destination, giving customers a simple path from
+              discovery to checkout.
+            </p>
 
-              <div>
-                <span class="check">✓</span>
-                Carefully selected products
-              </div>
-
-              <div>
-                <span class="check">✓</span>
-                Professional grooming essentials
-              </div>
-
-              <div>
-                <span class="check">✓</span>
-                Products for men and women
-              </div>
-
-              <div>
-                <span class="check">✓</span>
-                Fast and reliable shipping
-              </div>
-
-            </div>
-
-            <div style="margin-top:35px;">
-
-              <a
-                href="https://www.babaluxpro.com/shop"
-                class="btn btn-outline"
-                target="_blank"
-                rel="noopener"
-              >
-                Discover Babalux
-              </a>
-
-            </div>
-
+            <a href="#products" class="button">VIEW PRODUCTS</a>
           </div>
 
         </div>
-
       </div>
     </section>
 
 
-    <!-- =====================================================
-         CTA
-         ===================================================== -->
-
     <section class="cta">
-
       <div class="container">
 
-        <div class="cta-inner">
+        <div class="eyebrow">Your routine. Elevated.</div>
 
-          <h2>
-            Your routine.
-            <br />
-            <em>Upgraded.</em>
-          </h2>
+        <h2>Discover Babalux.</h2>
 
-          <div class="cta-copy">
+        <p>
+          Explore professional grooming and beauty essentials designed for
+          modern routines.
+        </p>
 
-            <p>
-              Explore the complete Babalux collection and find the tools,
-              treatments and essentials built for your next level.
-            </p>
-
-            <a
-              href="https://www.babaluxpro.com/shop"
-              class="btn"
-              target="_blank"
-              rel="noopener"
-            >
-              Shop Now →
-            </a>
-
-          </div>
-
-        </div>
+        <a href="#products" class="button">SHOP THE COLLECTION</a>
 
       </div>
-
     </section>
 
   </main>
 
 
-  <!-- =======================================================
-       FOOTER
-       ======================================================= -->
-
-  <footer id="contact">
-
+  <footer>
     <div class="container">
 
-      <div class="footer-top">
+      <div class="footer-grid">
 
         <div class="footer-brand">
-
-          <a href="#" class="logo">
-            BABA<span>LUX</span>
-          </a>
+          <div class="logo">BABA<span>LUX</span></div>
 
           <p>
-            Professional grooming, hair care and personal-care essentials
-            for modern salons, barbers and individuals.
+            Professional grooming and beauty products with a refined,
+            independent brand experience.
           </p>
-
         </div>
 
-
-        <div class="footer-column">
-
+        <div>
           <h4>Explore</h4>
 
-          <a href="#collections">Collections</a>
-          <a href="#products">Featured Products</a>
-          <a href="#story">About Babalux</a>
-
+          <ul>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#story">About Babalux</a></li>
+          </ul>
         </div>
 
+        <div>
+          <h4>Customer</h4>
 
-        <div class="footer-column">
-
-          <h4>Shop</h4>
-
-          <a
-            href="https://www.babaluxpro.com/shop"
-            target="_blank"
-            rel="noopener"
-          >
-            All Products
-          </a>
-
-          <a
-            href="https://www.babaluxpro.com/shop"
-            target="_blank"
-            rel="noopener"
-          >
-            Hair Care
-          </a>
-
-          <a
-            href="https://www.babaluxpro.com/shop"
-            target="_blank"
-            rel="noopener"
-          >
-            Barber Tools
-          </a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-          <h4>Contact</h4>
-
-          <a href="mailto:babalux.barber@gmail.com">
-            babalux.barber@gmail.com
-          </a>
-
-          <a href="tel:+46729294898">
-            +46 729 294 898
-          </a>
-
-          <a
-            href="https://www.babaluxpro.com/"
-            target="_blank"
-            rel="noopener"
-          >
-            Original Website
-          </a>
-
+          <ul>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Shipping</a></li>
+          </ul>
         </div>
 
       </div>
 
-
-      <div class="footer-bottom">
-
-        <span>
-          © <span id="year"></span> Babalux. All rights reserved.
-        </span>
-
-        <span>
-          Professional grooming & personal care
-        </span>
-
+      <div class="copyright">
+        © 2026 Babalux. All rights reserved.
       </div>
 
     </div>
-
   </footer>
 
 
-  <!-- =======================================================
-       JAVASCRIPT
-       ======================================================= -->
-
   <script>
+    function paymentPlaceholder(event) {
+      event.preventDefault();
 
-    /* Header background */
+      alert(
+        "This product is not connected to checkout yet. " +
+        "Your secure payment link will be added here."
+      );
 
-    const header = document.getElementById("header");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 30) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
-
-
-    /* Mobile menu */
-
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const mobileLinks = document.querySelectorAll(".mobile-link");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-
-      menuBtn.textContent =
-        mobileMenu.classList.contains("open") ? "×" : "☰";
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        menuBtn.textContent = "☰";
-      });
-    });
-
-
-    /* Scroll reveal */
-
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
-      }
-    );
-
-    revealElements.forEach(element => {
-      revealObserver.observe(element);
-    });
-
-
-    /* Current year */
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
+      return false;
+    }
   </script>
 
 </body>
 </html>
-```
