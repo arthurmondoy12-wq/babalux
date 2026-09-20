@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,24 +124,28 @@
       padding: 100px 0;
     }
     .hero-brand {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 28px;
-}
+      width: 100%;
+      text-align: left;
+      margin-bottom: 28px;
+    }
 
-.hero-brand-name {
-  font-family: Georgia, serif;
-  font-size: 46px;
-  letter-spacing: 8px;
-  color: #d6b774;
-  margin-bottom: 8px;
-}
+    .hero-brand-name {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1;
+      letter-spacing: 6px;
+      color: #d6b774;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-.hero-brand-tagline {
-  font-size: 12px;
-  letter-spacing: 4px;
-  color: #d6b774;
-}
+    .hero-brand-tagline {
+      font-size: 11px;
+      line-height: 1.4;
+      letter-spacing: 3px;
+      color: #d6b774;
+      text-transform: uppercase;
+    }
 
     .eyebrow {
       color: #d6b774;
@@ -567,6 +572,20 @@
 
       .hero-content {
         padding: 80px 0;
+      }
+
+      .hero-brand {
+        margin-bottom: 24px;
+      }
+
+      .hero-brand-name {
+        font-size: 34px;
+        letter-spacing: 4px;
+      }
+
+      .hero-brand-tagline {
+        font-size: 9px;
+        letter-spacing: 2px;
       }
 
       .button {
