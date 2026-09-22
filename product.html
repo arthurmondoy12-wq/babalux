@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BABALUX | Product</title>
+<meta name="description" content="BABALUX professional grooming and beauty product details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0b0b0b;color:#f4f0e8;font-family:"DM Sans",Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(11,11,11,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(214,183,116,.16)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:600 28px "Playfair Display",Georgia,serif;letter-spacing:5px;color:#f5ead1}
+.nav-links{display:flex;gap:30px;list-style:none;color:#c8c1b5;font-size:14px}
+.nav-links a:hover{color:#d6b774}
+.product-page{padding:80px 0 110px}
+.back-link{display:inline-block;color:#d6b774;text-transform:uppercase;letter-spacing:2px;font-size:11px;margin-bottom:35px}
+.product-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:start}
+.product-visual{min-height:560px;background:radial-gradient(circle,rgba(255,255,255,.07),transparent 50%),#171717;border:1px solid rgba(214,183,116,.14);display:flex;align-items:center;justify-content:center;padding:30px}
+.product-visual img{width:100%;height:520px;object-fit:contain}
+.placeholder{text-align:center;color:#77716a}
+.placeholder strong{display:block;color:#d6b774;text-transform:uppercase;letter-spacing:2px;font-size:11px;margin-bottom:10px}
+.eyebrow{color:#d6b774;text-transform:uppercase;letter-spacing:4px;font-size:12px;font-weight:700;margin-bottom:15px}
+h1{font:600 clamp(42px,6vw,70px)/1.02 "Playfair Display",Georgia,serif;margin:0 0 18px}
+.category{color:#d6b774;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:700;margin-bottom:10px}
+.description{color:#aaa39a;font-size:16px;line-height:1.8;max-width:650px;margin-bottom:28px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.pill{border:1px solid rgba(214,183,116,.2);padding:8px 11px;color:#c8c1b5;font-size:11px}
+.price{font:600 31px "Playfair Display",Georgia,serif;color:#f5ead1;margin-bottom:24px}
+.buy-button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #d6b774;background:#d6b774;color:#111;padding:15px 25px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer}
+.buy-button:hover{background:transparent;color:#d6b774}
+.note{margin-top:20px;color:#6f6a63;font-size:12px}
+footer{border-top:1px solid rgba(214,183,116,.14);padding:30px 0;background:#080808}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font:600 22px "Playfair Display",Georgia,serif;letter-spacing:4px;color:#f5ead1}
+.copyright{color:#69655f;font-size:12px}
+@media(max-width:800px){.product-layout{grid-template-columns:1fr;gap:35px}.product-visual{min-height:420px}.product-visual img{height:390px}}
+@media(max-width:600px){.nav-links{gap:14px;font-size:12px}.nav-links li:nth-child(2){display:none}.product-page{padding-top:55px}.footer-inner{flex-direction:column;gap:10px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">BABALUX</a>
+    <ul class="nav-links">
+      <li><a href="index.html#collections">Collections</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#story">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="product-page">
+  <div class="container">
+    <a class="back-link" href="index.html#products">← Back to products</a>
+    <div id="product-detail"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">BABALUX</div>
+    <div class="copyright">© 2026 BABALUX. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const products = [["studio-techno", "STUDIO TECHNO", "Hair Scissors", "£22.99", "studio-techno.jpg", "Wide and precise, they allow a precision work keeping softness in the cut sensation.", ["5.5", "6.0"]], ["pro-cut", "PRO CUT", "Razors", "£4.99", "", "Classic half-blade razor for beard and trimming.", ["Half Blade"]], ["pet-scissors", "PET SCISSORS", "Pet Grooming", "£64.99", "", "", ["Thinning Scissors"]], ["sonic-plastic-handle", "SONIC PLASTIC HANDLE SERIES", "Hair Scissors", "£9.99", "", "Model with ergonomic handle and lowered thumb ring for a correct working posture.", ["5.5", "6.0"]], ["studio-techno-relax-th", "STUDIO TECHNO RELAX-TH", "Thinning Scissors", "£26.99", "", "Code 2231. 38-tooth thinning shears with a 40% cutting ratio.", ["2231", "38 Teeth", "40%"]], ["standard-272", "STANDARD HAIR SCISSORS 272", "Thinning Scissors", "£16.99", "", "Code 272. Thinning scissors with half blade and a 30% cutting ratio.", ["272", "30%"]], ["standard-2127", "STANDARD HAIR SCISSORS 2127", "Hair Scissors", "£16.99", "", "Scissors with a classical and multipurpose line for professional people and schools.", ["2127", "6.0", "6.5"]], ["studio-style-2433", "STUDIO STYLE 2433", "Hair Scissors", "£26.99", "", "Scissors with an innovative and functional line, ideal to thin and for cuts of high precision.", ["2433"]], ["studio-style-2431", "STUDIO STYLE 2431", "Thinning Scissors", "£26.99", "", "38-tooth thinning scissors with a 40% cutting ratio.", ["2431", "38 Teeth", "40%"]], ["standard-set", "STANDARD HAIR SCISSORS SET", "Hair Scissors", "£41.99", "standard-hair-scissors-set.jpg", "Unique article including one cutting piece and one thinning piece.", ["Cutting Scissors", "Thinning Scissors"]], ["standard-hair-scissors", "STANDARD HAIR SCISSORS", "Hair Scissors", "£25.99", "standard-hair-scissors.jpg", "Linear and tough scissors for a soft and precise cut.", ["6.0", "6.5", "7.0"]], ["gold-series-2471", "GOLD SERIES 2471", "Thinning Scissors", "£63.99", "gold-series-2471.jpg", "Professional thinning scissors from the Gold Series 2471.", ["2471", "Gold Series"]], ["pro-cut-comb", "PRO CUT", "Razors", "£4.99", "", "Classic razor with half blade and thinning comb.", ["Half Blade", "Thinning Comb"]]];
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const product = products.find(p => p[0] === id);
+const detail = document.getElementById("product-detail");
+
+if (!product) {
+  document.title = "BABALUX | Product not found";
+  detail.innerHTML = `
+    <div class="eyebrow">BABALUX</div>
+    <h1>Product not found</h1>
+    <p class="description">The requested product could not be found in the current catalogue.</p>
+    <a class="buy-button" href="index.html#products">View Products</a>
+  `;
+} else {
+  document.title = `BABALUX | ${product[1]}`;
+  const image = product[4]
+    ? `<img src="${product[4]}" alt="BABALUX ${product[1]}">`
+    : `<div class="placeholder"><strong>${product[2]}</strong>Product image coming soon</div>`;
+  const description = product[5] || "Product details will be added when the source information is available.";
+  detail.innerHTML = `
+    <div class="product-layout">
+      <div class="product-visual">${image}</div>
+      <div class="product-copy">
+        <div class="category">${product[2]}</div>
+        <div class="eyebrow">Product Details</div>
+        <h1>${product[1]}</h1>
+        <p class="description">${description}</p>
+        <div class="meta">${product[6].map(m => `<span class="pill">${m}</span>`).join("")}</div>
+        <div class="price">${product[3]}</div>
+        <button class="buy-button" onclick="buyProduct('${product[0]}')">Buy Now</button>
+        <div class="note">Secure checkout will be connected to this product.</div>
+      </div>
+    </div>
+  `;
+}
+
+function buyProduct(id) {
+  alert("Secure checkout will be connected to this product.");
+}
+</script>
+</body>
+</html>
