@@ -105,11 +105,12 @@ if (!product) {
 } else {
   document.title = `BABALUX | ${product[1]}`;
   const galleries = {
-    "pro-cut": ["pro-cut-2.png", "pro-cut-1.png"],
-    "studio-techno": ["studio-techno-2.png"],
-    "pet-scissors": ["pet-scissors-product-image-1.png"],
-"sonic-plastic-handle": ["sonic-plastic-handle-series-1.png"]
-  };
+  "pro-cut": ["pro-cut-2.png", "pro-cut-1.png"],
+  "studio-techno": ["studio-techno-2.png"],
+  "pet-scissors": ["pet-scissors-product-image-1.png"],
+  "sonic-plastic-handle": ["sonic-plastic-handle-series-1.png"],
+  "studio-techno-relax-th": ["studio-techno-relax-th-1.png"]
+};
   const galleryImages = galleries[product[0]] || (product[4] ? [product[4]] : []);
   const description = product[5] || "Product details will be added when the source information is available.";
 
